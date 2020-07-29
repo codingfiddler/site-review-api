@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import url
+from apps.sitereview.views import UpView
+
 
 urlpatterns = [
+    url(r'^$', UpView.as_view(), name='up'),
     path('admin/', admin.site.urls),
 ]
