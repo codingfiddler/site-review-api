@@ -3,7 +3,7 @@ Resources:
   - TargetService:
       Type: AWS::ECS::Service
       Properties:
-        TaskDefinition: "arn:aws:ecs:us-east-2:148455690730:task-definition/SiteReviewAPI:1"
+        TaskDefinition: "arn:aws:ecs:us-east-2:148455690730:task-definition/SiteReviewAPI:2"
         LoadBalancerInfo:
           ContainerName: "sitereviewapidjango"
           ContainerPort: 8080
