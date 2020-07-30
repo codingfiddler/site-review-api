@@ -18,8 +18,10 @@ from django.urls import path, include
 from django.conf.urls import url
 from apps.sitereview.views import UserViewSet, WebsiteViewSet, PageViewSet, CommentViewSet
 from django.contrib.auth import authenticate, login
+from apps.sitereview.views import UpView
 
 urlpatterns = [
+    url(r'^$', UpView.as_view(), name='up'),
     path('admin/', admin.site.urls),
     path('users/', UserViewSet.as_view({'get': 'list', 'post': 'create'})),
     url(

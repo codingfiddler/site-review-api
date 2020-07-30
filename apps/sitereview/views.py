@@ -1,3 +1,4 @@
+
 from django.shortcuts import render
 from rest_framework.views import APIView
 from apps.sitereview.serializers import (
@@ -7,6 +8,7 @@ from apps.sitereview.models import Website, Page, Comment
 from rest_framework import viewsets, generics
 from django.contrib.auth.models import User
 from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework.response import Response
 
 
 
@@ -32,3 +34,6 @@ class CommentViewSet(viewsets.ModelViewSet):
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['user', 'page']
 
+class UpView(APIView):
+    def get(self, request):
+        return Response("ok", status=200)
